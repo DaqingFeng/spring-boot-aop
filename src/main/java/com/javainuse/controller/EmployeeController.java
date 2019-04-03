@@ -10,6 +10,7 @@ import com.javainuse.model.Employee;
 import com.javainuse.service.EmployeeService;
 
 @RestController
+@RequestMapping("/Employee")
 public class EmployeeController {
 
 	@Autowired
@@ -17,9 +18,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/add/employee", method = RequestMethod.GET)
 	public Employee addEmployee(@RequestParam("name") String name, @RequestParam("empId") String empId) {
-
 		return employeeService.createEmployee(name, empId);
-
 	}
 
 	@RequestMapping(value = "/remove/employee", method = RequestMethod.GET)
